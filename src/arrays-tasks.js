@@ -132,10 +132,19 @@ function getStringsLength(arr) {
  */
 function getAverage(arr) {
   if (arr.length === 0) return 0;
-  return +(
-    arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0) /
-    arr.length
-  ).toFixed(2);
+  // return Number(
+  //   (
+  //     arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0) /
+  //     arr.length
+  //   ).toFixed(2)
+  // );
+  const sum = arr.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    0
+  );
+  const arrayLength = arr.length;
+  const average = sum / arrayLength;
+  return Number(average.toFixed(2));
 }
 
 /**
